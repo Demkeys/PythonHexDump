@@ -1,4 +1,6 @@
-#   This script produces a hexdump of the mentioned file
+#   Simple script to create a hexdump of a file in a specific format. 
+#   It displays the input offset in hexadecimal, followed by sixteen space-separated hexadecimal bytes, 
+#   followed by the same sixteen bytes as printable characters, enclosed within '|' characters.
 #   Argument #1: Path of file.
 #   Argument #2: Number of blocks to read.
 #   NOTE: Argument #2 is not the number of bytes per block.
