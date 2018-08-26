@@ -1,7 +1,7 @@
 # PythonHexDump
-### Simple script to create a hexdump of a file in a specific format. It displays the input offset in hexadecimal, followed by sixteen space-separated hexadecimal bytes, followed by the same sixteen bytes as printable characters, enclosed within '|' characters.
+### Simple script to create a hexdump of a file in a specific format. It displays the input offset in hexadecimal, followed by sixteen space-separated hexadecimal bytes split into two columns, followed by the same sixteen bytes as printable characters, enclosed within '|' characters.
 
-![](https://github.com/Demkeys/PythonHexDump/blob/master/screencap2.png "Screenshot")
+![](https://github.com/Demkeys/PythonHexDump/blob/master/screencap3.png "Screenshot")
 
 
 * __This script produces a hexdump of the mentioned file__
