@@ -7,6 +7,8 @@
 * __NOTE: Argument #2 is not the number of bytes per block.__
 * __Each block's size is 16, so the script will try to read 16 bytes per block.__
 * __Use --help flag for info.__
+
+Example hexdump:
 ![](https://github.com/Demkeys/PythonHexDump/blob/master/screencap3.png "Screenshot")
 
 
