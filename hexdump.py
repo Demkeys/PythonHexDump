@@ -1,6 +1,7 @@
 #   Simple script to create a hexdump of a file in a specific format. 
-#   It displays the input offset in hexadecimal, followed by sixteen space-separated hexadecimal bytes, 
-#   followed by the same sixteen bytes as printable characters, enclosed within '|' characters.
+#   It displays the input offset in hexadecimal, followed by sixteen space-separated hexadecimal bytes
+#   separated into two columns, followed by the same sixteen bytes as printable characters, enclosed 
+#   within '|' characters.
 #   Argument #1: Path of file.
 #   Argument #2: Number of blocks to read.
 #   NOTE: Argument #2 is not the number of bytes per block.
@@ -25,7 +26,11 @@ def mainlogic():
             hexByteCount = 0                                    # Bytes count so that empty spaces can be added if less than 16
             for hexByte in b:                                   # Iterate through bytes
                 hexBytes += (format(hexByte, '02x') + ' ')      # Format hexByte to 2 digit hex, with padding of zero
-                hexByteCount+=1                                 
+                if hexByteCount == 7:                           # If currently iterating over 8th byte
+                    hexBytes += ' '                             # Add extra ' ' into hexBytes
+                hexByteCount+=1
+            if hexByteCount < 8:                                # If number of bytes less than 8
+                hexBytes += ' '                                 # Add extra ' ' into hexBytes
             hexByteCount = 16 - hexByteCount                    # Calculate how many empty spaces need to be added
             for r in range(hexByteCount):                       # Add empty spaces
                 hexBytes += '   '
@@ -47,7 +52,7 @@ def mainlogic():
             print(stringToPrint)
             bcount += len(b)                                    # Increment total byte count
 
-            if len(b) < 16:                                     # If byte count of current iteration was less than 16, break for loop
+            if len(b) < 16:
                 break
         myfile.close()                                          # Close file
     except OSError as err:                                      # Catch exception if file is not found
